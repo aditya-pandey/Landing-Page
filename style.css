@@ -1,0 +1,347 @@
+body{
+    background-color: #EAEBF7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+    margin-top: 105px;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: "1fr 1fr 1fr";
+    grid-template-rows: "1fr 1fr 1fr 1fr 1fr";
+    grid-template-areas: 
+      "reg reg reg"
+      "feature feature feature"
+      "video video video"
+      "book book book"
+      "footer footer footer"
+      "";
+    padding-top:120px;
+  }
+  header{
+    background-color: white;
+    box-shadow: 2px 0px 2px 2px gray;
+    top: 0;
+    left: 0;
+    z-index:99;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  ul{
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  #header-img{
+    width: 250px;
+    height: 80px; 
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration:none;
+    color:black;
+  /*  box-shadow: 1px 1px 1px 2px gray;
+    padding: 5px; */
+  }
+  li{
+    list-style: none;
+    display: inline;
+    padding: 35px;
+  }
+  .reg{
+    text-align: center;
+    height:100vh;
+  } 
+  input{
+    height: 25px;
+    width: 300px;
+    text-align: center;
+  }
+  .feature{
+    text-align: left;
+    padding: 20px;
+    height:100vh;
+    display: grid;
+    grid-template-columns: "1fr 1fr 1fr";
+    grid-template-rows: "1fr 1fr 1fr";
+    grid-template-areas: 
+      "collection col-des col-des"
+      "delivery del-des del-des"
+      "quality qual-des qual-des";
+    grid-row-gap: 10px;
+    grid-column-gap: 40px;
+  }
+  .collection{
+    grid-area: collection;
+  }
+  .col-des{
+    grid-area: col-des;
+  }
+  .delivery{
+    grid-area: delivery;
+  }
+  .del-des{
+    grid-area: del-des;
+  }
+  .quality{
+    grid-area: quality;
+  }
+  .qual-des{
+    grid-area: qual-des;
+  }
+  .xyz{
+    font-size: 4.3em;
+    color: #2E6ED0;
+    padding-left: 80px;
+  }
+  h2{
+  display: inline;
+  }
+  .video{
+    text-align: center;
+    height:100vh;
+    vertical-align:middle;
+  }
+  .shop{
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #DFE84D;
+    border-radius: 2px;
+  }
+  .shop:hover{
+    background-color: gray;
+    cursor: pointer;
+  }
+  #start{
+    width: 230px;
+    height: 25px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    background-color: lightblue;
+  }
+  #start:hover{
+    background-color: gray;
+    cursor: pointer;
+  }
+  .book{
+    display: grid;
+    grid-template-columns: "1fr 1fr 1fr";
+    grid-template-rows: auto;
+    grid-template-areas:
+      "book-1 book-2 book-3";
+    text-align: center;
+    grid-gap: 150px;
+  }
+  #howto{
+    grid-area: book-1;
+  }
+  #nine{
+    grid-area: book-2;
+  }
+  #fact{
+    grid-area: book-3;
+  }
+  .kitab{
+    border: 2px;
+    width: 290px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: all 0.4s;
+  }
+  .kitab:hover{
+    box-shadow: 1px 2px 15px 2px black;
+  }
+  .book-cover{
+    height: 145px;
+  }
+  h3{
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: lightgray;  
+  }
+  .shop{
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: lightblue;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .shop:hover{
+    background-color: gray;
+    cursor: pointer;
+  }
+  footer{
+    margin: 0px;
+    padding: 0px;
+  }
+  footer{
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: -6px;
+    padding: 10px;
+  }
+  footer > p{
+    text-align: center;
+    font-size: 0.8em;
+  }
+  @media screen and (max-width: 1240px){
+    header{
+    display: grid;
+    grid-template-columns: "1fr";
+    grid-template-rows: "1fr 1fr";
+    grid-template-areas:
+      "logo"
+      "menu"
+      ;
+    justify-content: left;
+      align-items: self;
+      grid-area: header;
+    }
+    #header-img{
+      grid-area: logo;
+      margin-left: 70px;
+      width: 100%;
+    }
+    ul{
+      grid-area: menu;
+      width: 100%;
+      float: left;
+    }
+    li{
+      padding: 10px;
+    }
+    .container{
+      margin-top: 20%;
+       display: grid;
+    grid-template-columns: "1fr 3fr";
+    grid-template-rows: repeat(8, "1fr");
+    grid-template-areas:
+      "reg reg"
+      "collection col-des"
+      "delivery del-des"
+      "quality qual-des"
+      "video video"
+      "book book"
+      "footer footer"
+      ;
+     justify-content: center;
+    }
+    .reg{
+      margin-top: 160px;
+      grid-area: reg;
+    }
+    .video{
+      grid-area: video;
+    }
+    .book{
+    display: grid;
+    grid-template-columns: "1fr";
+    grid-template-rows: auto;
+    grid-template-areas:
+      "book-1"
+      "book-2"
+      "book-3";
+    justify-content: center;
+    grid-gap: 50px;
+      grid-area: book;
+  }
+    iframe{
+      width: 300px;
+      height: 200px;
+    }
+    .xyz{
+      padding-left: 10px;
+    }
+    footer{
+      grid-area: footer;
+    }
+  }
+  @media screen and (max-width: 770px){
+    ul{
+    float: unset;
+    margin-top:20px;
+    grid-area: menu;
+    margin-left: 10%;
+    padding-right: 25px;
+    }
+    li{
+      padding-right: 7px;
+    }
+  }
+  
+  @media screen and (max-width: 590px){
+    header{
+    display: grid;
+    grid-template-columns: "1fr";
+    grid-template-rows: "1fr 1fr";
+    grid-template-areas:
+      "logo"
+      "menu";  
+   justify-content: left;
+   align-items: left;
+   }
+    .reg{
+      margin-top: 160px;
+      display: grid;
+    }
+    #header-img{
+      grid-area: logo;
+      margin-left: 30%;
+   width: 100%;
+    }
+    ul{
+      grid-area: menu;
+      margin-right: 5%;
+      margin-left: 2%;
+      margin-top:14px;
+    }
+    li{
+      padding-right: 5px;
+      margin-top: 1px;
+    }
+  .conatiner{
+   margin-top: 300px;
+    display: grid;
+    grid-template-columns: "1fr";
+    grid-template-rows: repeat(10, "1fr");
+    grid-template-areas:
+      "reg"
+      "collection"
+      "col-des"
+      "delivery"
+      "del-des"
+      "quality"
+      "qual-des"
+      "video"
+      "book"
+      "footer"
+      ;
+     justify-content: center;
+  }
+
+  @media screen and (max-width: 438px){
+    li{
+      font-size: 0.9em;
+      padding: 7px;
+    }
+  }
+  @media screen and (max-width: 375px){
+    ul{
+      grid-area: menu;
+      margin-right: 5%;      
+    }
+    li{
+      padding: 7px;
+    }
+  }
