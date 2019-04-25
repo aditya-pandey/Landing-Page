@@ -2,12 +2,12 @@ body{
     background-color: #EAEBF7;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
-    margin-top: 105px;
+    overflow-x: hidden;
   }
   .container{
     display: grid;
     grid-template-columns: "1fr 1fr 1fr";
-    grid-template-rows: "1fr 1fr 1fr 1fr 1fr";
+    grid-template-rows: "1fr 1fr 0.5fr 1fr 1fr";
     grid-template-areas: 
       "reg reg reg"
       "feature feature feature"
@@ -15,14 +15,14 @@ body{
       "book book book"
       "footer footer footer"
       "";
-    padding-top:120px;
+      place-items: center center;
   }
   header{
     background-color: white;
     box-shadow: 2px 0px 2px 2px gray;
     top: 0;
     left: 0;
-    z-index:99;
+    z-index:1;
     position: fixed;
     width: 100%;
     overflow: hidden;
@@ -43,6 +43,7 @@ body{
   a:hover{
     text-decoration:none;
     color:black;
+    cursor: pointer;
   /*  box-shadow: 1px 1px 1px 2px gray;
     padding: 5px; */
   }
@@ -52,8 +53,9 @@ body{
     padding: 35px;
   }
   .reg{
+    margin-top: 80px;
     text-align: center;
-    height:100vh;
+    height:50vh;
   } 
   input{
     height: 25px;
@@ -63,15 +65,14 @@ body{
   .feature{
     text-align: left;
     padding: 20px;
-    height:100vh;
+    height:70vh;
     display: grid;
-    grid-template-columns: "1fr 1fr 1fr";
-    grid-template-rows: "1fr 1fr 1fr";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
     grid-template-areas: 
       "collection col-des col-des"
       "delivery del-des del-des"
       "quality qual-des qual-des";
-    grid-row-gap: 10px;
     grid-column-gap: 40px;
   }
   .collection{
@@ -102,8 +103,11 @@ body{
   }
   .video{
     text-align: center;
-    height:100vh;
-    vertical-align:middle;
+    height:35vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .shop{
     width: 200px;
@@ -131,13 +135,14 @@ body{
     cursor: pointer;
   }
   .book{
+    margin-top: 100px; 
     display: grid;
     grid-template-columns: "1fr 1fr 1fr";
     grid-template-rows: auto;
     grid-template-areas:
       "book-1 book-2 book-3";
     text-align: center;
-    grid-gap: 150px;
+    grid-gap: 50px;
   }
   #howto{
     grid-area: book-1;
@@ -184,131 +189,95 @@ body{
   footer{
     margin: 0px;
     padding: 0px;
-  }
-  footer{
     background-color: white;
     border-radius: 2px;
-    margin-bottom: -6px;
     padding: 10px;
-  }
-  footer > p{
     text-align: center;
     font-size: 0.8em;
-  }
+    width: 100%;
+  }  
   @media screen and (max-width: 1240px){
+      #header-img{
+        grid-area: logo;
+        margin-left: 70px;
+        width: 60%;
+      }
+      .feature{
+        height: 80vh;
+      }
+      ul{
+         grid-area: menu;
+         width: 100%;
+         float: left;
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+        
+      }
+      li{
+        padding: 10px;
+      }
+      .container{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto auto auto auto;
+      grid-template-areas:
+        "reg reg"
+        "collection col-des"
+        "delivery del-des"
+        "quality qual-des"
+        "video video"
+        "book book"
+        "footer footer";
+      justify-content: center;
+      }
+      .reg{
+        margin-top: 160px;
+        grid-area: reg;
+      }
+      .video{
+        grid-area: video;
+      }
+      .book{
+      display: grid;
+      grid-template-columns: "1fr";
+      grid-template-rows: auto;
+      grid-template-areas:
+        "book-1"
+        "book-2"
+        "book-3";
+      justify-content: center;
+      grid-gap: 50px;
+        grid-area: book;
+    }
+      .xyz{
+        padding-left: 10px;
+      }
+      footer{
+        margin-top: 20px;
+        grid-area: footer;
+        width: 100vw;
+      }
     header{
     display: grid;
-    grid-template-columns: "1fr";
+    grid-template-columns: auto auto;
     grid-template-rows: "1fr 1fr";
-    grid-template-areas:
-      "logo"
-      "menu"
-      ;
-    justify-content: left;
-      align-items: self;
-      grid-area: header;
-    }
-    #header-img{
-      grid-area: logo;
-      margin-left: 70px;
-      width: 100%;
-    }
-    ul{
-      grid-area: menu;
-      width: 100%;
-      float: left;
-    }
-    li{
-      padding: 10px;
-    }
-    .container{
-      margin-top: 20%;
-       display: grid;
-    grid-template-columns: "1fr 3fr";
-    grid-template-rows: repeat(8, "1fr");
-    grid-template-areas:
-      "reg reg"
-      "collection col-des"
-      "delivery del-des"
-      "quality qual-des"
-      "video video"
-      "book book"
-      "footer footer"
-      ;
-     justify-content: center;
-    }
-    .reg{
-      margin-top: 160px;
-      grid-area: reg;
-    }
-    .video{
-      grid-area: video;
-    }
-    .book{
-    display: grid;
-    grid-template-columns: "1fr";
-    grid-template-rows: auto;
-    grid-template-areas:
-      "book-1"
-      "book-2"
-      "book-3";
-    justify-content: center;
-    grid-gap: 50px;
-      grid-area: book;
-  }
-    iframe{
-      width: 300px;
-      height: 200px;
-    }
-    .xyz{
-      padding-left: 10px;
-    }
-    footer{
-      grid-area: footer;
-    }
-  }
-  @media screen and (max-width: 770px){
-    ul{
-    float: unset;
-    margin-top:20px;
-    grid-area: menu;
-    margin-left: 10%;
-    padding-right: 25px;
-    }
-    li{
-      padding-right: 7px;
-    }
-  }
-  
-  @media screen and (max-width: 590px){
-    header{
-    display: grid;
-    grid-template-columns: "1fr";
-    grid-template-rows: "1fr 1fr";
-    grid-template-areas:
-      "logo"
-      "menu";  
-   justify-content: left;
-   align-items: left;
+   justify-content: space-around;
+   align-items: center;
+   justify-items: center;
    }
     .reg{
-      margin-top: 160px;
       display: grid;
     }
     #header-img{
-      grid-area: logo;
       margin-left: 30%;
-   width: 100%;
+      width: 30%;
     }
     ul{
-      grid-area: menu;
-      margin-right: 5%;
-      margin-left: 2%;
       margin-top:14px;
-    }
-    li{
-      padding-right: 5px;
-      margin-top: 1px;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100vw;
     }
   .conatiner{
    margin-top: 300px;
@@ -327,21 +296,6 @@ body{
       "book"
       "footer"
       ;
-     justify-content: center;
+     place-items: center center;
   }
-
-  @media screen and (max-width: 438px){
-    li{
-      font-size: 0.9em;
-      padding: 7px;
-    }
-  }
-  @media screen and (max-width: 375px){
-    ul{
-      grid-area: menu;
-      margin-right: 5%;      
-    }
-    li{
-      padding: 7px;
-    }
   }
